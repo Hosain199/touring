@@ -1,17 +1,16 @@
 # Tourism Booking Platform
 
-A backend-focused web application for promoting tourism in Bangladesh. The platform enables users to browse tours, book destinations, reserve tour guides, and securely complete payments online.
+A backend-focused web application designed to promote tourism in Bangladesh. Users can explore tours, book destinations, reserve tour guides, and securely complete payments online.
 
 ## Features
 
-* User registration and authentication
-* Browse and search tours
-* Tour and guide booking system
-* Secure Stripe payment integration
-* User profile and booking management
-* Admin functionalities for managing tours and guides
-* Responsive user interface
-* MongoDB-based data storage
+* User authentication and authorization
+* Tour browsing and booking
+* Tour guide reservation system
+* Secure payment integration with Stripe
+* Dynamic views with Pug templates
+* MongoDB-based data management
+* MVC architecture for maintainability
 
 ## Tech Stack
 
@@ -30,6 +29,7 @@ A backend-focused web application for promoting tourism in Bangladesh. The platf
 ### Database
 
 * MongoDB
+* Mongoose
 
 ### Payment
 
@@ -39,21 +39,26 @@ A backend-focused web application for promoting tourism in Bangladesh. The platf
 
 * Git
 * GitHub
+* ESLint
+* Prettier
 
-## Architecture
-
-The project follows the MVC (Model-View-Controller) architecture:
+## Project Structure
 
 ```text
-Client
-   ↓
-Routes
-   ↓
-Controllers
-   ↓
-Models
-   ↓
-MongoDB
+.
+├── controllers/
+│   ├── tourController.js
+│   └── userController.js
+├── dev-data/
+├── models/
+├── public/
+├── routes/
+├── app.js
+├── server.js
+├── package.json
+├── .eslintrc.json
+├── .prettierrc
+└── .gitignore
 ```
 
 ## Installation
@@ -61,8 +66,8 @@ MongoDB
 ### Clone the repository
 
 ```bash
-git clone https://github.com/Hosain199/tourism-booking-platform.git
-cd tourism-booking-platform
+git clone https://github.com/Hosain199/touring.git
+cd touring
 ```
 
 ### Install dependencies
@@ -73,53 +78,52 @@ npm install
 
 ### Configure environment variables
 
-Create a `.env` file and add:
+Create a `config.env` file:
 
 ```env
 DATABASE=<your_mongodb_connection_string>
+DATABASE_PASSWORD=<password>
+JWT_SECRET=<your_secret>
+JWT_EXPIRES_IN=90d
 STRIPE_SECRET_KEY=<your_stripe_secret_key>
-JWT_SECRET=<your_secret_key>
 ```
 
 ### Run the application
+
+Development mode:
+
+```bash
+npm run start:dev
+```
+
+Production mode:
 
 ```bash
 npm start
 ```
 
-or
-
-```bash
-npm run dev
-```
-
-## Project Structure
+## Architecture
 
 ```text
-├── controllers/
-├── models/
-├── routes/
-├── views/
-├── public/
-├── middleware/
-├── utils/
-├── app.js
-├── server.js
-└── package.json
+Client
+  ↓
+Routes
+  ↓
+Controllers
+  ↓
+Models
+  ↓
+MongoDB
 ```
 
 ## Future Improvements
 
-* REST API support
-* Email notifications
-* User reviews and ratings
+* REST API endpoints
+* Reviews and ratings
 * Wishlist and favorites
+* Email notifications
 * Hotel and transportation booking
-* Admin dashboard analytics
-
-## Screenshots
-
-Add screenshots here.
+* Admin dashboard
 
 ## Author
 
