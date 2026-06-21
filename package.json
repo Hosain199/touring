@@ -1,0 +1,48 @@
+{
+  "name": "touring",
+  "version": "1.0.0",
+  "description": "touring website",
+  "license": "MIT",
+  "author": "Hosain",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=development nodemon server.js",
+    "start:prod": "cross-env NODE_ENV=production nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "import-dev-data": "node dev-data/import-dev-data.js --import",
+    "delete-dev-data": "node dev-data/import-dev-data.js --delete"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.16.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-react": "^7.37.5",
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "plugin:prettier/recommended",
+      "plugin:node/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ]
+  }
+}
